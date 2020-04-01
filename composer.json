@@ -1,5 +1,7 @@
 {
     "require": {
-        "phpmailer/phpmailer": "^6.0"
+        "phpmailer/phpmailer": "^6.0",
+        "symfony/polyfill-mbstring": "^1.15",
+        "league/oauth2-google": "^3.0"
     }
 }
