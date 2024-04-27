@@ -23,21 +23,21 @@ once done, run `php index.php` to start the framework and off you go.
 
 ### Todo
 
-[X] Basic HTTP request handling
-[X] Extend Swoole\Http\Response
-[ ] Extend Swoole\Http\Request
-[X] Basic Controllers
-[X] Basic Routing
-[ ] Middleware support
-[ ] Advanced routing with in-route params
-[X] Add twig templating engine
-[ ] DB Connection
-[X] Encryption & Hashing utils
-[ ] HTTP utils (cookie managers, session managers, etc)
-[ ] Socket utils
-[ ] general utils (random num/string generator, and others)
-[X] Basic logging
-[ ] Testing
-[ ] Exceptions
-[ ] Caching
-[X] Global Configuration
+- [X] Basic HTTP request handling
+- [X] Extend Swoole\Http\Response
+- [ ] Extend Swoole\Http\Request
+- [X] Basic Controllers
+- [X] Basic Routing
+- [ ] Middleware support
+- [ ] Advanced routing with in-route params
+- [X] Add twig templating engine
+- [ ] DB Connection
+- [X] Encryption & Hashing utils
+- [ ] HTTP utils (cookie managers, session managers, etc)
+- [ ] Socket utils
+- [ ] general utils (random num/string generator, and others)
+- [X] Basic logging
+- [ ] Testing
+- [ ] Exceptions
+- [ ] Caching
+- [X] Global Configuration
