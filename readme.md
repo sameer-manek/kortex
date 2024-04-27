@@ -1,4 +1,4 @@
-# PHP Kortex
+# Kortex
 
 A PHP framework which is
 - Simple to use.
@@ -20,3 +20,24 @@ once you have the project, just clone this repo, rename it as you will, use `dat
 once done, run `php index.php` to start the framework and off you go.
 
 *NOTE* To host your application, SSH access to the server will be necessary.
+
+### Todo
+
+[X] Basic HTTP request handling
+[X] Extend Swoole\Http\Response
+[ ] Extend Swoole\Http\Request
+[X] Basic Controllers
+[X] Basic Routing
+[ ] Middleware support
+[ ] Advanced routing with in-route params
+[X] Add twig templating engine
+[ ] DB Connection
+[X] Encryption & Hashing utils
+[ ] HTTP utils (cookie managers, session managers, etc)
+[ ] Socket utils
+[ ] general utils (random num/string generator, and others)
+[X] Basic logging
+[ ] Testing
+[ ] Exceptions
+[ ] Caching
+[X] Global Configuration
