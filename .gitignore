@@ -1,3 +1,4 @@
+data/db/*
 data/logs/*
 data/config.php
 composer.lock

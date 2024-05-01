@@ -2,6 +2,10 @@
 
 namespace Controllers;
 
+use Data\DB;
+use Data\Log;
+use Data\Queries;
+
 class Home {
 	// method: GET
 	public function index($req, $res) {
@@ -10,6 +14,12 @@ class Home {
 
 	public function home($req, $res) {
 		$res->redirect("/");
+	}
+
+	public function test_json($req, $res) {
+		$res->json([
+			"message" => "Hello, World!"
+		]);
 	}
 
 	public function err_404($req, $res) {

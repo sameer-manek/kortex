@@ -4,6 +4,6 @@ namespace Data;
 
 class Queries {
 	const
-		// user queries
-		USER_CREATE = "";
+		// queries
+		SELECT_USER = "SELECT * FROM users WHERE email = ?";
 }
