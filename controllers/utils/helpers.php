@@ -15,3 +15,22 @@ function random_string ($length=10) {
 	}
 	return $random_string;
 }
+
+function get_mime_type ($filepath) {
+	$types = [
+		"css" => "text/css",
+		"js" => "text/javascript",
+		"png" => "image/png",
+		"jpg" => "image/jpeg",
+		"jpeg" => "image/jpeg",
+		"gif" => "image/gif",
+		"svg" => "image/svg+xml",
+		"ico" => "image/x-icon",
+	];
+	$ext = pathinfo($filepath, PATHINFO_EXTENSION);
+	if (array_key_exists($ext, $types)) {
+		return $types[$ext];
+	}
+	return "text/plain";
+}
+	

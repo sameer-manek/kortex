@@ -41,7 +41,7 @@ once done, run `php index.php` to start the framework and off you go.
 - [X] Encryption & Hashing utils
 - [ ] HTTP utils (cookie managers, session managers, etc)
 - [ ] Socket utils
-- [ ] General utils (random number/string generator, and others)
+- [X] General utils (random number/string generator, and others)
 - [X] Basic logging
 - [ ] Testing
 - [ ] Exceptions
@@ -50,3 +50,5 @@ once done, run `php index.php` to start the framework and off you go.
 - [ ] Task/Job queue
 - [ ] SMTP Util
 - [ ] Documentation
+- [ ] Security (CSRF, google recaptcha v3)
+- [ ] Debug Utils (Debugbar, etc)
