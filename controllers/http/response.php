@@ -38,4 +38,10 @@ class Response {
 		$this->swoole->header("Content-Type", "text/plain");
 		$this->swoole->end($message);
 	}
+
+	public function redirect($route) { // $route:string
+		$this->swoole->status(302);
+		$this->swoole->header("Location", $route);
+		$this->swoole->end();
+	}
 }

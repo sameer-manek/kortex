@@ -4,6 +4,7 @@ use Swoole\Http\Server;
 use Swoole\Http\Request as SwooleRequest;
 use Swoole\Http\Response as SwooleResponse;
 use Controllers\Http\Response;
+use Controllers\Http\Request;
 use Data\Log;
 
 $server = new Server("localhost", 8080);
@@ -25,6 +26,7 @@ $server->on("request", function (SwooleRequest $request, SwooleResponse $respons
 	if (!$router) return;
 	
 	// cast request and response to our classes
+	$request = new Request($request);
 	$response = new Response($response);
 	
 	if (!$router->resolve($request, $response)) {

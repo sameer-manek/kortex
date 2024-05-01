@@ -15,7 +15,7 @@ I have been a long time Laravel user and while I have always been in awe of it, 
 - Swoole
 - MySQL (Database Connection are WIP)
 
-once you have the project, just clone this repo, rename it as you will, use `data/config.sample.php` create a new config.php file in same dir. Also create a `data/logs` dir.
+once you have the project, just clone this repo, rename it as you will, use `data/config.sample.php` create a new `config.php` file in same dir. Run `composer install`in the root directory and also create a `data/logs` directory to store logs.
 
 once done, run `php index.php` to start the framework and off you go.
 
@@ -25,19 +25,22 @@ once done, run `php index.php` to start the framework and off you go.
 
 - [X] Basic HTTP request handling
 - [X] Extend Swoole\Http\Response
-- [ ] Extend Swoole\Http\Request
+- [X] Extend Swoole\Http\Request
 - [X] Basic Controllers
 - [X] Basic Routing
-- [ ] Middleware support
+- [X] Middleware support
 - [ ] Advanced routing with in-route params
 - [X] Add twig templating engine
-- [ ] DB Connection
+- [ ] DB Connection (Just MySQL)
 - [X] Encryption & Hashing utils
 - [ ] HTTP utils (cookie managers, session managers, etc)
 - [ ] Socket utils
-- [ ] general utils (random num/string generator, and others)
+- [ ] General tils (random num/string generator, and others)
 - [X] Basic logging
 - [ ] Testing
 - [ ] Exceptions
 - [ ] Caching
 - [X] Global Configuration
+- [ ] Task/Job queue
+- [ ] SMTP Util
+- [ ] Documentation
