@@ -35,7 +35,7 @@ once done, run `php index.php` to start the framework and off you go.
 - [X] Basic Controllers
 - [X] Basic Routing
 - [X] Middleware support
-- [ ] Advanced routing with in-route params
+- [X] Advanced routing with in-route params
 - [X] Add twig templating engine
 - [X] DB Connection (MySQL. Needs to be optimized)
 - [X] Encryption & Hashing utils

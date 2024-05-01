@@ -47,29 +47,41 @@ class Router {
 	public function resolve($request, $response) {
 		$method = $request->swoole->server['request_method'];
 		$uri = $request->swoole->server['request_uri'];
-
+	
 		// process all the middlewares
-		$middlewares = $this->routes[$method][$uri]['middlewares'] ?? [];
-		$this->process_middlewares(
-			$middlewares, 
-			$request, 
-			$response
-		);
-
-		$handler = $this->routes[$method][$uri]['handler'] ?? false;
-
+		$middlewares = [];
+		$handler = false;
+		$params = [];
+	
+		// regex black magic to match the routes and extract the parameters
+		foreach ($this->routes[$method] as $route => $route_data) {
+			$pattern = preg_replace_callback('/{(\w+)}/', function ($matches) {
+				return '(?P<' . $matches[1] . '>[^\/]+)';
+			}, $route);
+			$pattern = '@^' . $pattern . '$@';
+			if (preg_match($pattern, $uri, $matches)) {
+				$params = array_filter($matches, 'is_string', ARRAY_FILTER_USE_KEY);
+				$middlewares = $route_data['middlewares'] ?? [];
+				$handler = $route_data['handler'] ?? false;
+				break;
+			}
+		}
+	
+		$this->process_middlewares($middlewares, $request, $response);
+	
 		if(!$handler) {
 			return false;
 		}
-
+	
+		// Add the parameters to the request object
+		$request->add_data('params', $params);
+	
 		if (is_callable($handler)) {
 			$handler($request, $response);
 		} else {
 			list($controller, $method) = explode('@', $handler);
-			$controllerInstance = new $controller();
-			$controllerInstance->$method($request, $response);
+			$controller_instance = new $controller();
+			$controller_instance->$method($request, $response);
 		}
-
-		return true;
 	}
 }
