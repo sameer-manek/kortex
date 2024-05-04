@@ -25,7 +25,7 @@ class DB {
 		]);
 	}
 
-	public function run_query($query, ...$query_vars) {
+	public function query($query, ...$query_vars) {
         $statement = $this->conn->prepare($query);
         if ($statement == false) {
             $log = new Log(date('Y-m-d H:i:s'), 'ERROR', 'prepare statement', $this->conn->error);

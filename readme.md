@@ -39,16 +39,16 @@ once done, run `php index.php` to start the framework and off you go.
 - [X] Add twig templating engine
 - [X] DB Connection (MySQL. Needs to be optimized)
 - [X] Encryption & Hashing utils
-- [ ] HTTP utils (cookie managers, session managers, etc)
+- [X] HTTP utils (cookie managers, session managers, etc)
 - [ ] Socket utils
 - [X] General utils (random number/string generator, and others)
 - [X] Basic logging
-- [ ] Testing
+- [ ] Testing (PHPUnit)
 - [ ] Exceptions
 - [ ] Caching (actively looking for redis alternatives. boooo redis)
 - [X] Global Configuration
-- [ ] Task/Job queue
+- [X] Task/Job queue
 - [ ] SMTP Util
 - [ ] Documentation
-- [ ] Security (CSRF, google recaptcha v3)
+- [ ] Security (CSRF)
 - [ ] Debug Utils (Debugbar, etc)
