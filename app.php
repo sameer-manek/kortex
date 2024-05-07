@@ -54,10 +54,10 @@ $server->on("request", function (SwooleRequest $request, SwooleResponse $respons
 });
 
 $server->on("WorkerStart", function ($server, $worker_id) {
+	// Remove this if you don't want to use the queue
 	if ($worker_id === 0) {
-		error_log("processing queue\n");
-		swoole_timer_tick(30000, function() { // every 30 sec
-			Controllers\Utils\Queue::class::work();
+		swoole_timer_tick(10000, function() { // process every 10 seconds
+			Controllers\Utils\Queue::work();
 		});
 	}
 });

@@ -5,6 +5,7 @@ namespace Controllers;
 use Data\DB;
 use Data\Log;
 use Data\Queries;
+use Controllers\Utils\Email;
 
 class Home {
 	// method: GET
