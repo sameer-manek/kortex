@@ -6,6 +6,7 @@ use Swoole\Http\Response as SwooleResponse;
 use Controllers\Http\Response;
 use Controllers\Http\Request;
 use Data\Log;
+use Data\Cache;
 use Data\SessionManager;
 
 $PORT = 8080;
@@ -20,11 +21,13 @@ $server->set([
 	// 'daemonize' => true
 ]);
 
+$cache = Cache::getInstance();
+
 $server->on("start", function ($server) {
 	error_log("Swoole HTTP server is started on localhost\n");
 });
 
-$server->on("request", function (SwooleRequest $request, SwooleResponse $response) use ($router) {
+$server->on("request", function (SwooleRequest $request, SwooleResponse $response) use ($router, $cache) {
 	SessionManager::start();
 	$uri = $request->server['request_uri'];
 

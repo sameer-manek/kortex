@@ -7,6 +7,26 @@ class Request {
 	public $swoole;
 
 	public function __construct ($request) {
+		/*
+			Swoole request already captures the data from the request as follows:
+				// Extracting GET parameters
+				$getParams = $request->get ?? [];
+				
+				// Extracting POST parameters
+				$postParams = $request->post ?? [];
+				
+				// Extracting headers
+				$headers = $request->header ?? [];
+				
+				// Extracting cookies
+				$cookies = $request->cookie ?? [];
+				
+				// Extracting raw body (for JSON, etc.)
+				$rawBody = $request->rawContent();
+				
+				// Extracting files (if any)
+				$files = $request->files ?? [];
+		*/
 		$this->swoole = $request;
 	}
 

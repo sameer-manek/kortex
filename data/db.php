@@ -14,6 +14,9 @@ use Swoole\Coroutine\MySQL;
 class DB {
 	private $conn;
 
+	// todo: store last inserted record
+	// todo: connection pooling
+
 	public function __construct() {
 		$this->conn = new MySQL();
 		$this->conn->connect([
