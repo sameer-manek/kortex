@@ -45,10 +45,10 @@ once done, run `php index.php` to start the framework and off you go.
 - [X] Basic logging
 - [ ] Testing (PHPUnit)
 - [ ] Exceptions
-- [ ] Caching (actively looking for redis alternatives. boooo redis)
+- [X] Caching (we are using Swoole\Table)
 - [X] Global Configuration
 - [X] Task/Job queue
-- [ ] SMTP Util
+- [X] SMTP Util (using Symfony\Mailer)
 - [ ] Documentation
-- [ ] Security (CSRF)
+- [X] Security (CSRF)
 - [ ] Debug Utils (Debugbar, etc)

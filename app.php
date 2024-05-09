@@ -27,7 +27,7 @@ $server->on("start", function ($server) {
 	error_log("Swoole HTTP server is started on localhost\n");
 });
 
-$server->on("request", function (SwooleRequest $request, SwooleResponse $response) use ($router, $cache) {
+$server->on("request", function (SwooleRequest $request, SwooleResponse $response) use ($router) {
 	SessionManager::start();
 	$uri = $request->server['request_uri'];
 
@@ -61,6 +61,7 @@ $server->on("WorkerStart", function ($server, $worker_id) {
 	if ($worker_id === 0) {
 		swoole_timer_tick(10000, function() { // process every 10 seconds
 			Controllers\Utils\Queue::work();
+			(Cache::getInstance())->manage(); // delete expired cache keys
 		});
 	}
 });
